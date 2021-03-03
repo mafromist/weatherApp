@@ -1,0 +1,188 @@
+@import url("https://fonts.googleapis.com/css2?family=Saira:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800&display=swap");
+
+body {
+  margin: 0;
+  height: 100%;
+  width: 100%;
+  font-family: "Saira", sans-serif;
+}
+
+.mainArea {
+  height: 100vh;
+  display: flex;
+  justify-content: space-between;
+  background: linear-gradient(
+      96.68deg,
+      #f0c426 4.23%,
+      rgba(255, 255, 255, 0) 94.4%
+    ),
+    #327da5;
+  margin: 0;
+
+  /* display: grid;
+   grid-template-columns: 5fr 50px 5fr;
+   grid-template-rows:    minmax(100px, auto); */
+}
+
+/* left side of the app */
+
+.leftSide {
+  width: 100%;
+  display: grid;
+  grid-template-rows: 1fr 4fr 3fr;
+  grid-row-gap: 20px;
+  margin-top: 10vh;
+  color: white;
+  text-transform: uppercase;
+}
+
+.curLocationTitle {
+  font-size: 30px;
+  text-align: center;
+}
+
+.genInfo {
+  text-align: center;
+}
+
+.curDegree {
+  font-size: 5em;
+  margin-bottom: 0;
+  line-height: 40px;
+}
+.curStatus {
+  font-size: 4em;
+  margin: 0 auto;
+}
+.curAdvice {
+  font-size: 2em;
+  font-weight: 300;
+  margin: 0 auto;
+}
+
+.extraInfo {
+  margin-left: 50%;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  text-align: center;
+  line-height: 40px;
+}
+
+.windSpeed {
+  background: linear-gradient(90deg, #fddb92 0%, #d1fdff 100%);
+  height: 60px;
+  width: 100%;
+  line-height: 60px;
+}
+
+.sunrise {
+  background: linear-gradient(90deg, #f6d365 0%, #fda085 100%);
+  margin-left: 20%;
+  margin-bottom: 5px;
+  height: 40px;
+  width: 70%;
+}
+
+.sunset {
+  background: linear-gradient(90deg, #fa709a 0%, #fee140 100%);
+  height: 40px;
+  width: 70%;
+  margin-top: 5px;
+}
+
+/* middle header area */
+
+.middle {
+  background: #332a79;
+  width: 50px;
+}
+
+.logoType {
+  color: white;
+  font-family: "Saira", sans-serif;
+  font-size: 24px;
+  padding: 0;
+  margin: 0;
+  margin-top: 70%;
+  transform: rotate(-90deg);
+  margin-top: 90vh;
+}
+
+/* right side of the app */
+
+.rightSide {
+  width: 100%;
+  display: grid;
+  grid-template-rows: 0.5fr 4fr 1.5fr 0.9fr;
+  grid-row-gap: 20px;
+  margin: 13vh auto 6vh auto;
+  color: #323a82;
+  font-weight: 600;
+  text-transform: uppercase;
+}
+
+.favLocationTitle {
+  font-size: 3em;
+  text-align: center;
+}
+
+.yourLocations {
+  display: grid;
+  height: 25vh;
+  grid-template-columns: 2fr 0.4fr 2fr;
+  grid-template-rows: 1fr 1fr 1fr;
+  grid-gap: 2.5em;
+  margin: 10px 20px;
+  justify-items: center;
+  align-self: center;
+}
+
+.favLocation {
+  border: 5px solid white;
+  width: 100px;
+  height: 100px;
+  background-color: transparent;
+  color: white;
+  font-family: "Saira", sans-serif;
+  font-size: 1.5em;
+  border-radius: 8px;
+  font-weight: 400;
+}
+
+.searchBar {
+  text-align: center;
+  font-weight: 800;
+  font-size: 1.6em;
+}
+
+.searchBarArea {
+  border: 5px solid rgb(67, 67, 189);
+  height: 40px;
+  width: 20vw;
+  border-radius: 12px;
+}
+input[type="text"] {
+  font-weight: 800;
+  font-size: 1em;
+  font-family: "Saira", sans-serif;
+  color: teal;
+  text-align: center;
+}
+
+.randomLocBtnArea {
+  text-align: center;
+}
+
+.randomLocBtn {
+  padding: 12px 80px;
+  color: white;
+  background: linear-gradient(90deg, #30cfd0 0%, #330867 100%);
+  border-radius: 37px;
+  font-weight: 800;
+  font-size: 1.4em;
+  font-family: "Saira", sans-serif;
+  text-align: center;
+  text-transform: uppercase;
+  border: none;
+}
