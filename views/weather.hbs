@@ -1,21 +1,25 @@
 <main class="mainArea">
 
     <div class="curLocation leftSide">
+        <div class="genInfo">
+        {{#if err}}
+        <h2>{{err}}</h2>
+        {{/if}}
 
+        {{#if listExists}}
         <div class="curLocationTitle">
             <h1>{{name}}</h1>
         </div>
-
-        <div class="genInfo">
-
-            <h2 class="curDegree">{{data.temp}}</h2>
-            <h2 class="curStatus">{{data.description}}</h2>
-            <h2 class="curAdvice">{{data.feels_like}}</h2>
+            {{#each data1}}
+            <h2 class="curDegree">{{this}}</h2>
+            {{/each}}
+        {{/if}}
         </div>
+
         <div class="extraInfo">
-            <h3 class="windSpeed">WIND SPEED: {{data.wind}}</h3>
-            <h3 class="sunrise">Sunrise: {{data.sunrise}}</h3>
-            <h3 class="sunset">Sunset: {{data.sunset}}</h3>
+            <h3 class="windSpeed">WIND SPEED: {{data2.wind}}</h3>
+            <h3 class="sunrise">Sunrise: {{data2.sunrise}}</h3>
+            <h3 class="sunset">Sunset: {{data2.sunset}}</h3>
         </div>
     </div>
 
@@ -50,3 +54,11 @@
 
     </div>
 </main>
+
+{{!-- 
+        
+
+            <h2 class="curDegree">{{data.temp}}</h2>
+            <h2 class="curStatus">{{data.description}}</h2>
+            <h2 class="curAdvice">{{data.feels_like}}</h2>
+        </div> --}}
