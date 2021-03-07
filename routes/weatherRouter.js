@@ -4,10 +4,10 @@ const router = express.Router();
 const getWeather = require("../lib/getWeather");
 const convertTime = require("../lib/convertTime");
 
-router.get("/:CITY/:CODE", async (req, res) => {
-  let city = req.params.city;
-  let code = req.params.code;
-  const data = await getWeather(CITY, CODE);
+router.get("/", async (req, res) => {
+  let city = req.query.city;
+  let code = req.query.code;
+  const data = await getWeather(city,code);
 
   if (data.cod == "404") {
     res.render("weather", {
@@ -35,7 +35,7 @@ router.get("/:CITY/:CODE", async (req, res) => {
 router.get("/", (req, res) => {
   res.render("weather");
 });
-
+/* 
 router.post("/", async (req, res) => {
     let city = req.body.city;
     let code = req.body.code;
@@ -61,6 +61,6 @@ router.post("/", async (req, res) => {
     data2: { wind, sunrise, sunset },
     listExists: true,
   });
-});
+}); */
 
 module.exports = router;

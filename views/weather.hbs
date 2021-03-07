@@ -32,17 +32,16 @@
 
         <div class="favLocationTitle">Your Locations</div>
         <div class="yourLocations">
-            <button class="favLocation">IST</button>
-            <button class="favLocation">MAN</button>
-            <button class="favLocation">BUE</button>
-            <button class="favLocation">NYC</button>
-            <button class="favLocation">MCO</button>
-            <button class="favLocation">KEN</button>
-
+            <button class="favLocation" onclick="location.href='./weather?city=istanbul&code=tr'">IST</button>
+            <button class="favLocation" onclick="location.href='./weather?city=manchester&code=gb'">MAN</button>
+            <button class="favLocation" onclick="location.href='./weather?city=buenos+aires&code=ar'">BUE</button>
+            <button class="favLocation" onclick="location.href='./weather?city=new+york&code=us'">NYC</button>
+            <button class="favLocation" onclick="location.href='./weather?city=moscow&code=ru'">MCO</button>
+            <button class="favLocation" onclick="location.href='./weather?city=nairobi&code=ke'">KEN</button>
         </div>
 
         <div class="searchBar">
-            <form method="POST" action="/weather" class="searchForm">
+            <form method="GET" action="/weather" class="searchForm">
                 <label for="searchArea" class="searchBarTitle">City Name:</label>
                 <input type="text" class="searchBarArea" name="city">
 
@@ -53,9 +52,6 @@
             </form>
         </div>
 
-        <div class="randomLocBtnArea">
-            <button class="randomLocBtn">whateverise</button>
-        </div>
 
     </div>
 </main>
