@@ -38,8 +38,12 @@
 
         <div class="searchBar">
             <form method="POST" action="/weather" class="searchForm">
-                <label for="searchArea" class="searchBarTitle">search a location</label></br>
-                <input type="text" class="searchBarArea" name="city"></br>
+                <label for="searchArea" class="searchBarTitle">City Name:</label>
+                <input type="text" class="searchBarArea" name="city">
+
+                <label for="code">Country Code: </label>
+                <input type="text" class="searchBarArea" name="code"></br>
+
                 <input type="submit" class="submitBtn" value="submit">
             </form>
         </div>

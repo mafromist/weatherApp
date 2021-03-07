@@ -2,18 +2,18 @@
 
     <div class="curLocation leftSide">
         <div class="genInfo">
-        {{#if err}}
-        <h2>{{err}}</h2>
-        {{/if}}
+            {{#if err}}
+            <h2>{{err}}</h2>
+            {{/if}}
 
-        {{#if listExists}}
-        <div class="curLocationTitle">
-            <h1>{{name}}</h1>
-        </div>
+            {{#if listExists}}
+            <div class="curLocationTitle">
+                <h1>{{name}}</h1>
+            </div>
             {{#each data1}}
             <h2 class="curDegree">{{this}}</h2>
             {{/each}}
-        {{/if}}
+            {{/if}}
         </div>
 
         <div class="extraInfo">
@@ -38,12 +38,17 @@
             <button class="favLocation">NYC</button>
             <button class="favLocation">MCO</button>
             <button class="favLocation">KEN</button>
+
         </div>
 
         <div class="searchBar">
             <form method="POST" action="/weather" class="searchForm">
-                <label for="searchArea" class="searchBarTitle">search a location</label></br>
-                <input type="text" class="searchBarArea" name="city"></br>
+                <label for="searchArea" class="searchBarTitle">City Name:</label>
+                <input type="text" class="searchBarArea" name="city">
+
+                <label for="code">Country Code: </label>
+                <input type="text" class="searchBarArea" name="code"></br>
+
                 <input type="submit" class="submitBtn" value="submit">
             </form>
         </div>
@@ -55,10 +60,10 @@
     </div>
 </main>
 
-{{!-- 
-        
+{{!--
 
-            <h2 class="curDegree">{{data.temp}}</h2>
-            <h2 class="curStatus">{{data.description}}</h2>
-            <h2 class="curAdvice">{{data.feels_like}}</h2>
-        </div> --}}
+
+<h2 class="curDegree">{{data.temp}}</h2>
+<h2 class="curStatus">{{data.description}}</h2>
+<h2 class="curAdvice">{{data.feels_like}}</h2>
+</div> --}}

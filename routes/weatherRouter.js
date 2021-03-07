@@ -4,10 +4,10 @@ const router = express.Router();
 const getWeather = require("../lib/getWeather");
 const convertTime = require("../lib/convertTime");
 
-router.get("/:city", async (req, res) => {
+router.get("/:CITY/:CODE", async (req, res) => {
   let city = req.params.city;
   let code = req.params.code;
-  let data = await getWeather(city);
+  const data = await getWeather(CITY, CODE);
 
   if (data.cod == "404") {
     res.render("weather", {
@@ -16,13 +16,13 @@ router.get("/:city", async (req, res) => {
     return;
   }
 
-  let name = data.name;
-  let description = data.weather[0].description;
-  let temp = `${Math.floor(data.main.temp)}°C`;
-  let feels_like = `Feels like ${data.main.feels_like}°C`;
-  let wind = `${data.wind.speed} meter/sec`;
-  let sunrise = convertTime(data.sys.sunrise);
-  let sunset = convertTime(data.sys.sunset);
+  const name = data.name;
+  const description = data.weather[0].description;
+  const temp = `${Math.floor(data.main.temp)}°C`;
+  const feels_like = `Feels like ${data.main.feels_like}°C`;
+  const wind = `${data.wind.speed} meter/sec`;
+  const sunrise = convertTime(data.sys.sunrise);
+  const sunset = convertTime(data.sys.sunset);
 
   res.render("weather", {
     name,
@@ -37,8 +37,9 @@ router.get("/", (req, res) => {
 });
 
 router.post("/", async (req, res) => {
-  let city = req.body.city;
-  let data = await getWeather(city);
+    let city = req.body.city;
+    let code = req.body.code;
+  const data = await getWeather(city, code);
 
   if (data.cod == "404") {
     res.render("weather", {
@@ -46,17 +47,17 @@ router.post("/", async (req, res) => {
     });
     return;
   }
-  let name = data.name;
-  let description = data.weather[0].description;
-  let temp = `${Math.floor(data.main.temp)}°C`;
-  let feels_like = `Feels like ${data.main.feels_like}°C`;
-  let wind = `${data.wind.speed} meter/sec`;
-  let sunrise = convertTime(data.sys.sunrise);
-  let sunset = convertTime(data.sys.sunset);
+  const name = data.name;
+  const description = data.weather[0].description;
+  const temp = `${Math.floor(data.main.temp)}°C`;
+  const feels_like = `Feels like ${data.main.feels_like}°C`;
+  const wind = `${data.wind.speed} meter/sec`;
+  const sunrise = convertTime(data.sys.sunrise);
+  const sunset = convertTime(data.sys.sunset);
 
   res.render("weather", {
     name,
-    data1: { temp,description,feels_like },
+    data1: { temp, description, feels_like },
     data2: { wind, sunrise, sunset },
     listExists: true,
   });
