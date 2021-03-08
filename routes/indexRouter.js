@@ -13,9 +13,12 @@ router.get("/", async (req, res) => {
   const wind = `${data.wind.speed} meter/sec`;
   const sunrise = convertTime(data.sys.sunrise);
   const sunset = convertTime(data.sys.sunset);
+  const icon = `http://openweathermap.org/img/wn/${data.weather[0].icon}@2x.png`
+
 
   res.render("index", {
     name,
+    icon,
     data: { description, temp, feels_like, wind, sunrise, sunset },
   });
 });

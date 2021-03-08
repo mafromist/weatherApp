@@ -51,6 +51,15 @@ body {
   line-height: 40px;
   text-align: center;
 }
+.curStatus {
+  font-size: 4em;
+  margin: 0 auto;
+}
+.curAdvice {
+  font-size: 2em;
+  font-weight: 300;
+  margin: 0 auto;
+}
 
 .extraInfo {
   margin-left: 50%;
